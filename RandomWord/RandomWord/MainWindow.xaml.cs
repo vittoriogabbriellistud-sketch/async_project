@@ -71,7 +71,7 @@ namespace RandomWord
             {
                 if (int.TryParse(max.Text, out int maxLength))
                 {
-                    if (parolaCorrente.Length == 1)
+                    if (ListaParole.Items.Count == 0 || parolaCorrente.Length == 1)
                     {
                         ListaParole.Items.Add(parolaCorrente);
                     }
@@ -88,7 +88,6 @@ namespace RandomWord
                 }
                 else
                 {
-
                     MessageBox.Show("Per favore, inserisci un numero intero valido.", "Errore di input", MessageBoxButton.OK, MessageBoxImage.Warning);
                     max.Clear();
                     max.Focus();
