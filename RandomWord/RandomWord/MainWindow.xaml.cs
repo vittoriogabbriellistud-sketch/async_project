@@ -48,7 +48,7 @@ namespace RandomWord
 
         private async void EstrazioneLettera(object sender, RoutedEventArgs e)
         {
-            
+
             string carattereEstratto = CicloNumeri.Content.ToString();
             parolaCorrente += carattereEstratto;
             await Task.Delay(50);
@@ -63,26 +63,35 @@ namespace RandomWord
                 }
                 else
                 {
-                    
-                    ListaParole.Items[0] = parolaCorrente; 
+
+                    ListaParole.Items[0] = parolaCorrente;
                 }
             }
             else
-            {   
-                int maxLength = int.Parse(max.Text);            
-                if (parolaCorrente.Length == 1)
+            {
+                if (int.TryParse(max.Text, out int maxLength))
                 {
-                    ListaParole.Items.Add(parolaCorrente);
+                    if (parolaCorrente.Length == 1)
+                    {
+                        ListaParole.Items.Add(parolaCorrente);
+                    }
+                    else
+                    {
+                        int ultimoIndice = ListaParole.Items.Count - 1;
+                        ListaParole.Items[ultimoIndice] = parolaCorrente;
+                    }
+
+                    if (parolaCorrente.Length >= maxLength)
+                    {
+                        parolaCorrente = "";
+                    }
                 }
                 else
                 {
-                    int ultimoIndice = ListaParole.Items.Count - 1;
-                    ListaParole.Items[ultimoIndice] = parolaCorrente;
-                }
 
-                if (parolaCorrente.Length >= maxLength)
-                {
-                    parolaCorrente = "";
+                    MessageBox.Show("Per favore, inserisci un numero intero valido.", "Errore di input", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    max.Clear();
+                    max.Focus();
                 }
             }
         }
