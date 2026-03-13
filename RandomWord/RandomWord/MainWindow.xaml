@@ -6,12 +6,14 @@
         xmlns:local="clr-namespace:RandomWord"
         mc:Ignorable="d"
         Title="MainWindow" Height="403" Width="571">
+
     <Grid>
-        <Button Click="EstrazioneLettera" Content="Button" HorizontalAlignment="Left" Height="129" Margin="42,221,0,0" VerticalAlignment="Top" Width="254"/>
-        <ListBox x:Name="ListaParole" Height="298" Margin="323,52,0,0" VerticalAlignment="Top" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Width="211"/>
         <Label Content="Inserire il numero di lettere &#10;per ogni parola" FontSize="20" HorizontalAlignment="Left" Height="72" Margin="42,96,0,0" VerticalAlignment="Top" Width="254"/>
         <TextBox x:Name="max" HorizontalAlignment="Left" Height="43" Margin="42,173,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" FontSize="20"/>
+        <Button Click="EstrazioneLettera" Content="Button" HorizontalAlignment="Left" Height="129" Margin="42,221,0,0" VerticalAlignment="Top" Width="254"/>
+
         <Label x:Name="CicloNumeri" Content="" HorizontalAlignment="Left" Height="39" Margin="42,52,0,0" VerticalAlignment="Top" Width="254" FontSize="20"/>
+        <ListBox x:Name="ListaParole" Height="298" Margin="323,52,0,0" VerticalAlignment="Top" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Width="211"/>
 
     </Grid>
 </Window>
